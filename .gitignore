@@ -1,0 +1,8 @@
+.*
+.idea/
+atlassian-ide-plugin.xml
+*.iml
+target/
+logs/
+!/.gitignore
+manifest.xml
