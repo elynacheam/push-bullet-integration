@@ -104,4 +104,11 @@ public class User {
     public String toJson() {
         return new Gson().toJson(this, User.class);
     }
+
+    /**
+     * Acknowledge a push notification
+     */
+    public void acknowledgeNotification() {
+        numOfNotificationsPushed++;
+    }
 }

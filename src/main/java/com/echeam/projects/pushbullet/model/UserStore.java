@@ -14,8 +14,6 @@ public class UserStore {
 
     private static final Logger logger = LoggerFactory.getLogger(UserStore.class);
 
-    //private List<User> users = new ArrayList<>();
-
     // Thread safe list of users
     private List<User> users = Collections.synchronizedList(new ArrayList<>());
 
@@ -42,5 +40,19 @@ public class UserStore {
         }
         users.add(user);
         return user;
+    }
+
+    /**
+     * Search user by their username
+     * @param username
+     * @return Either a User object if present in the user store, null otherwise
+     */
+    public User searchByUsername(String username) {
+        for(User u : users) {
+            if(u.getUsername().equals(username)) {
+                return u;
+            }
+        }
+        return null;
     }
 }
